@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gradient-start: #0a0f2d;
+    --gradient-mid: #1a1f3c;
+    --gradient-end: #2a2f4c;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-[var(--gradient-start)] via-[var(--gradient-mid)] to-[var(--gradient-end)] min-h-screen text-white font-sans antialiased overflow-x-hidden;
+  }
+
+  ::selection {
+    @apply bg-primary-500/30 text-white;
+  }
+
+  select {
+    @apply text-white bg-transparent;
+  }
+
+  select option {
+    @apply bg-[var(--gradient-mid)] text-white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8;
+    box-shadow: 
+      0 4px 30px rgba(0, 0, 0, 0.1),
+      inset 0 0 30px rgba(96, 165, 250, 0.05);
+  }
+  
+  .neumorphic {
+    box-shadow: 
+      5px 5px 15px rgba(0, 0, 0, 0.3),
+      -5px -5px 15px rgba(255, 255, 255, 0.02),
+      inset 0 0 20px rgba(96, 165, 250, 0.05);
+  }
+
+  .input-field {
+    @apply w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl bg-white/5 border border-white/10 
+           focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-400/20
+           placeholder-gray-400 backdrop-blur-sm transition-all duration-200
+           text-sm sm:text-base text-white;
+  }
+
+  .btn-primary {
+    @apply relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-400 
+           hover:from-blue-500 hover:to-blue-300
+           text-white font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-xl
+           transform hover:scale-105 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:ring-offset-2 focus:ring-offset-[var(--gradient-mid)]
+           shadow-lg shadow-blue-500/20
+           text-sm sm:text-base;
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .btn-secondary {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10
+           hover:bg-white/10 text-white font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-xl
+           transform hover:scale-105 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-white/20
+           hover:border-blue-400/30 hover:shadow-[0_0_20px_rgba(96,165,250,0.2)]
+           text-sm sm:text-base;
+  }
+
+  .glow-effect {
+    @apply relative;
+    &::after {
+      content: '';
+      @apply absolute inset-0 rounded-full blur-lg opacity-50 bg-blue-400/30;
+      animation: pulse 2s infinite;
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0.2; }
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animated background gradient */
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Ensure text remains readable on all devices */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Improved touch targets for mobile */
+.touch-target {
+  @apply min-h-[44px] min-w-[44px];
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .glass-card {
+    @apply rounded-xl;
+  }
+
+  .btn-primary, .btn-secondary {
+    @apply w-full justify-center;
+  }
+}

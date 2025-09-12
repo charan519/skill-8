@@ -1,1 +1,2 @@
-# hackathon - Updated for October 4-5, 2025
+# Skill Sprint Hackathon - October 4-5, 2025
+Continuous deployment active! 🚀

@@ -30,24 +30,24 @@ function Navigation() {
         animate={{ y: 0 }}
         className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-lg border-b border-white/10"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link to="/" className="flex items-center gap-3">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 sm:h-16">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3">
               <img 
                 src="/techprojectshub.png" 
                 alt="Tech Projects Hub" 
-                className="h-10 w-auto object-contain"
+                className="h-8 sm:h-10 w-auto object-contain"
               />
-              <div className="text-left">
-                <div className="text-lg font-bold text-white">Tech Projects Hub</div>
+              <div className="text-left hidden xs:block">
+                <div className="text-sm sm:text-lg font-bold text-white">Tech Projects Hub</div>
                 <div className="text-xs text-gray-300">Innovation Platform</div>
               </div>
             </Link>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <img 
                 src="https://hubexus.com/wp-content/uploads/2025/03/Add-a-heading-1-scaled.png" 
                 alt="Hubexus" 
-                className="h-10 w-auto object-contain"
+                className="h-8 sm:h-10 w-auto object-contain"
               />
             </div>
           </div>
@@ -199,7 +199,7 @@ function HomeContent() {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 blur-3xl"></div>
             <span className="relative block text-lg font-bold text-gray-400 mb-4">Hubexus & Tech Projects Hub present</span>
-            <h1 className="relative text-6xl md:text-8xl lg:text-9xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 mb-6">
+            <h1 className="relative text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 mb-4 sm:mb-6 leading-tight">
               SKILL SPRINT
             </h1>
           </motion.div>
@@ -208,7 +208,7 @@ function HomeContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-3xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-purple-200"
+            className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-purple-200 leading-tight px-4"
           >
             LMS Platform Development Challenge
           </motion.h2>
@@ -217,47 +217,47 @@ function HomeContent() {
             <CountdownTimer />
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 mb-12">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-6 mb-8 sm:mb-12 px-4">
             <motion.div 
               whileHover={{ scale: 1.05, rotate: 2 }}
-              className="glass-card px-6 py-4 flex items-center gap-3 border border-white/10 hover:border-blue-500/30 transition-all duration-300"
+              className="glass-card px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-center gap-2 sm:gap-3 border border-white/10 hover:border-blue-500/30 transition-all duration-300"
             >
-              <Calendar className="w-6 h-6 text-blue-400" />
-              <span className="text-lg">October 4-5, 2025</span>
+              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 flex-shrink-0" />
+              <span className="text-sm sm:text-lg text-center">October 4-5, 2025</span>
             </motion.div>
            
             <motion.div 
               whileHover={{ scale: 1.05, rotate: -2 }}
-              className="glass-card px-6 py-4 flex items-center gap-3 border border-white/10 hover:border-purple-500/30 transition-all duration-300"
+              className="glass-card px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-center gap-2 sm:gap-3 border border-white/10 hover:border-purple-500/30 transition-all duration-300"
             >
-              <MapPin className="w-6 h-6 text-purple-400" />
-              <span className="text-lg">Open for All States</span>
+              <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 flex-shrink-0" />
+              <span className="text-sm sm:text-lg text-center">Open for All States</span>
             </motion.div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/tracks">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
+            <Link to="/tracks" className="w-full sm:w-auto">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-primary relative overflow-hidden group px-8 py-4 text-lg"
+                className="btn-primary relative overflow-hidden group px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-600/30 to-blue-600/0 group-hover:translate-x-full transition-transform duration-500"></div>
-                <span className="relative flex items-center gap-2">
+                <span className="relative flex items-center justify-center gap-2">
                   Explore Tracks
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </motion.button>
             </Link>
-            <Link to="/about">
+            <Link to="/about" className="w-full sm:w-auto">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-secondary group px-8 py-4 text-lg"
+                className="btn-secondary group px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto"
               >
-                <span className="relative flex items-center gap-2">
+                <span className="relative flex items-center justify-center gap-2">
                   About Us
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </motion.button>
             </Link>

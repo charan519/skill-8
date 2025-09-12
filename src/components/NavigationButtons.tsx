@@ -13,20 +13,20 @@ export function NavigationButtons({ showBack = true, showHome = true, className 
   const navigate = useNavigate();
 
   return (
-    <div className={`fixed top-20 left-4 z-40 flex items-center gap-4 ${className}`}>
+    <div className={`fixed top-16 sm:top-20 left-2 sm:left-4 z-40 flex items-center gap-2 sm:gap-4 ${className}`}>
       {showBack && (
         <motion.button
           onClick={() => navigate(-1)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="glass-card px-4 py-2 flex items-center gap-2 text-white hover:bg-white/10 transition-colors"
+          className="glass-card px-3 sm:px-4 py-2 flex items-center gap-1 sm:gap-2 text-white hover:bg-white/10 transition-colors text-sm sm:text-base"
         >
           <motion.div
             initial={{ x: 0 }}
             whileHover={{ x: -4 }}
             transition={{ duration: 0.2 }}
           >
-            <ChevronLeft className="w-5 h-5 text-blue-400" />
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
           </motion.div>
           <span className="relative font-medium">
             Back
@@ -39,9 +39,9 @@ export function NavigationButtons({ showBack = true, showHome = true, className 
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="glass-card px-4 py-2 flex items-center gap-2 text-white hover:bg-white/10 transition-colors"
+            className="glass-card px-3 sm:px-4 py-2 flex items-center gap-1 sm:gap-2 text-white hover:bg-white/10 transition-colors text-sm sm:text-base"
           >
-            <Home className="w-5 h-5 text-blue-400" />
+            <Home className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
             <span className="relative font-medium">
               Home
             </span>

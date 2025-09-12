@@ -81,14 +81,33 @@ export function ParticlesBackground() {
         detectRetina: true,
         responsive: [
           {
+            maxWidth: 480,
+            options: {
+              particles: {
+                number: {
+                  value: 20,
+                },
+                size: {
+                  value: { min: 1, max: 1.5 },
+                },
+                move: {
+                  speed: 0.5,
+                },
+              },
+            },
+          },
+          {
             maxWidth: 768,
             options: {
               particles: {
                 number: {
-                  value: 40,
+                  value: 30,
                 },
                 size: {
                   value: { min: 1, max: 2 },
+                },
+                move: {
+                  speed: 1,
                 },
               },
             },

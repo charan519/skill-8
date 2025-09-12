@@ -1,1 +1,1 @@
-# hackathon
+# hackathon - Updated for October 4-5, 2025

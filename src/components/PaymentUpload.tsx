@@ -75,7 +75,7 @@ export function PaymentUpload({ registrationId, onUploadSuccess }: PaymentUpload
 
   const handleUpload = async () => {
     if (!selectedFile || !utrNumber) {
-      toast.error('Please select a file and enter UTR number');
+      toast.error('Payment screenshot and UTR number are both required for registration verification');
       return;
     }
 
@@ -215,13 +215,13 @@ export function PaymentUpload({ registrationId, onUploadSuccess }: PaymentUpload
             )}
           </div>
           <p className="text-xs text-gray-400 mt-1">
-            Enter the 12-digit UTR number from your payment transaction
+            Enter the 12-digit UTR number from your payment transaction (Required)
           </p>
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-2">
-            Select payment screenshot
+            Select payment screenshot *
           </label>
           <input
             type="file"
@@ -240,6 +240,9 @@ export function PaymentUpload({ registrationId, onUploadSuccess }: PaymentUpload
               Selected: {selectedFile.name} ({(selectedFile.size / 1024 / 1024).toFixed(2)} MB)
             </p>
           )}
+          <p className="text-xs text-gray-400 mt-1">
+            Payment screenshot is required for registration verification
+          </p>
         </div>
 
         <motion.button

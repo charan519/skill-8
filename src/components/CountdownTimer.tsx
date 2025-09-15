@@ -10,7 +10,7 @@ interface TimeLeft {
 
 export function CountdownTimer() {
   const calculateTimeLeft = (): TimeLeft => {
-    const targetDate = new Date('2025-10-04T09:00:00'); // October 4, 2025 at 9:00 AM
+    const targetDate = new Date('2025-10-06T09:00:00'); // October 6, 2025 at 9:00 AM
     const now = new Date();
     const difference = targetDate.getTime() - now.getTime();
 

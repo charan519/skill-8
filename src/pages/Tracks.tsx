@@ -76,7 +76,7 @@ function TrackCard({ track, isSelected, onClick }) {
                   <h4 className="text-lg font-semibold mb-3">Problem Statement</h4>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
                     <Lock className="w-5 h-5 text-blue-400" />
-                    <p className="text-gray-400">Detailed requirements and company constraints will be released on October 3rd, 2025 at 6:00 PM</p>
+                    <p className="text-gray-400">Detailed requirements and company constraints will be released on October 5th, 2025 at 6:00 PM</p>
                   </div>
                 </div>
 
@@ -133,7 +133,7 @@ export default function Tracks() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden pt-20">
       <ParticlesBackground />
       <NavigationButtons />
 

@@ -139,13 +139,13 @@ export function RegistrationPopup({ isOpen, onClose }: RegistrationPopupProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-y-auto"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 pt-20 bg-black/50 backdrop-blur-sm overflow-y-auto"
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="relative w-full max-w-2xl glass-card p-6 my-8"
+            className="relative w-full max-w-4xl glass-card p-6 sm:p-8 my-4 sm:my-8 max-h-[90vh] overflow-y-auto"
           >
             <button
               onClick={onClose}
@@ -155,16 +155,16 @@ export function RegistrationPopup({ isOpen, onClose }: RegistrationPopupProps) {
               <X className="w-6 h-6" />
             </button>
             
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold mb-2">Register for Skill Sprint</h3>
-              <p className="text-gray-300">Fill in your team details to participate</p>
+            <div className="text-center mb-8 md:mb-10">
+              <h3 className="text-3xl md:text-4xl font-bold mb-3">Register for Skill Sprint</h3>
+              <p className="text-gray-300 text-base md:text-lg">Fill in your team details to participate</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
               {/* Team Information */}
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-sm md:text-base font-medium text-gray-300 mb-2">
                     <Users className="w-4 h-4 inline mr-2" />
                     Team Name *
                   </label>
@@ -179,7 +179,7 @@ export function RegistrationPopup({ isOpen, onClose }: RegistrationPopupProps) {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-sm md:text-base font-medium text-gray-300 mb-2">
                     Team Size *
                   </label>
                   <select
@@ -196,11 +196,11 @@ export function RegistrationPopup({ isOpen, onClose }: RegistrationPopupProps) {
               </div>
 
               {/* Team Leader Information */}
-              <div className="border-t border-white/10 pt-6">
-                <h4 className="text-lg font-semibold mb-4">Team Leader Information</h4>
-                <div className="grid md:grid-cols-2 gap-4">
+              <div className="border-t border-white/10 pt-8 md:pt-10">
+                <h4 className="text-xl md:text-2xl font-semibold mb-6 md:mb-8">Team Leader Information</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm md:text-base font-medium text-gray-300 mb-2">
                       <User className="w-4 h-4 inline mr-2" />
                       Full Name *
                     </label>
@@ -215,7 +215,7 @@ export function RegistrationPopup({ isOpen, onClose }: RegistrationPopupProps) {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm md:text-base font-medium text-gray-300 mb-2">
                       <Mail className="w-4 h-4 inline mr-2" />
                       Email *
                     </label>
@@ -230,7 +230,7 @@ export function RegistrationPopup({ isOpen, onClose }: RegistrationPopupProps) {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm md:text-base font-medium text-gray-300 mb-2">
                       <Phone className="w-4 h-4 inline mr-2" />
                       Phone Number *
                     </label>
@@ -245,7 +245,7 @@ export function RegistrationPopup({ isOpen, onClose }: RegistrationPopupProps) {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm md:text-base font-medium text-gray-300 mb-2">
                       <Building className="w-4 h-4 inline mr-2" />
                       Institution
                     </label>
@@ -259,7 +259,7 @@ export function RegistrationPopup({ isOpen, onClose }: RegistrationPopupProps) {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm md:text-base font-medium text-gray-300 mb-2">
                       State
                     </label>
                     <input
@@ -272,7 +272,7 @@ export function RegistrationPopup({ isOpen, onClose }: RegistrationPopupProps) {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm md:text-base font-medium text-gray-300 mb-2">
                       <Github className="w-4 h-4 inline mr-2" />
                       GitHub Profile
                     </label>
@@ -286,7 +286,7 @@ export function RegistrationPopup({ isOpen, onClose }: RegistrationPopupProps) {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm md:text-base font-medium text-gray-300 mb-2">
                       <Linkedin className="w-4 h-4 inline mr-2" />
                       LinkedIn Profile
                     </label>
@@ -303,12 +303,12 @@ export function RegistrationPopup({ isOpen, onClose }: RegistrationPopupProps) {
               </div>
 
               {/* Team Members */}
-              <div className="border-t border-white/10 pt-6">
-                <h4 className="text-lg font-semibold mb-4">Team Members (excluding leader)</h4>
-                <div className="space-y-3">
+              <div className="border-t border-white/10 pt-8 md:pt-10">
+                <h4 className="text-xl md:text-2xl font-semibold mb-6 md:mb-8">Team Members (excluding leader)</h4>
+                <div className="space-y-4 md:space-y-6">
                   {formData.teamMembers.slice(0, parseInt(formData.teamSize) - 1).map((member, index) => (
                     <div key={index}>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                      <label className="block text-sm md:text-base font-medium text-gray-300 mb-2">
                         Member {index + 1} Name {index === 0 ? '*' : ''}
                       </label>
                       <input

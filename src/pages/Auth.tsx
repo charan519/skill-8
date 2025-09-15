@@ -93,7 +93,7 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen py-20 px-4 relative">
+    <div className="min-h-screen pt-24 pb-8 px-4 relative">
       <ParticlesBackground />
       
       <div className="max-w-md mx-auto">

@@ -223,7 +223,7 @@ function HomeContent() {
               className="glass-card px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-center gap-2 sm:gap-3 border border-white/10 hover:border-blue-500/30 transition-all duration-300"
             >
               <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 flex-shrink-0" />
-              <span className="text-sm sm:text-lg text-center">October 4-5, 2025</span>
+              <span className="text-sm sm:text-lg text-center">October 6-7, 2025</span>
             </motion.div>
            
             <motion.div 
@@ -321,14 +321,14 @@ function HomeContent() {
               {
                 icon: <Rocket className="w-8 h-8" />,
                 title: "Hackathon Kickoff",
-                date: "October 4, 2025",
+                date: "October 6, 2025",
                 time: "9:00 AM",
                 position: "left"
               },
               {
                 icon: <Trophy className="w-8 h-8" />,
                 title: "Winners Announcement",
-                date: "October 5, 2025",
+                date: "October 7, 2025",
                 time: "6:00 PM",
                 position: "right"
               }

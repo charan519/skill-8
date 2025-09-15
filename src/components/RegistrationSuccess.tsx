@@ -51,16 +51,33 @@ const RegistrationSuccess: React.FC = () => {
     setShowPaymentUpload(true);
   };
 
-  const handleUploadSuccess = () => {
+  const handleUploadSuccess = async () => {
     setPaymentCompleted(true);
+    setShowPaymentUpload(false);
+    
+    // Fetch the updated screenshot URL from database
+    if (registrationId) {
+      try {
+        const { data, error } = await supabase
+          .from('registrations')
+          .select('payment_screenshot')
+          .eq('id', registrationId)
+          .single();
+
+        if (data?.payment_screenshot) {
+          setUploadedScreenshot(data.payment_screenshot);
+        }
+      } catch (error) {
+        console.error('Error fetching updated screenshot:', error);
+      }
+    }
+    
     // 🎉 Fire confetti when payment is completed
     confetti({
       particleCount: 150,
       spread: 70,
       origin: { y: 0.6 },
     });
-    // Refresh to get the uploaded screenshot URL
-    window.location.reload();
   };
 
   const handleQrCodeUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -80,7 +97,7 @@ const RegistrationSuccess: React.FC = () => {
   };
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen overflow-hidden px-4">
+    <div className="relative flex items-center justify-center min-h-screen overflow-hidden px-4 pt-20">
       {/* Background */}
       <ParticlesBackground />
 
@@ -158,19 +175,22 @@ const RegistrationSuccess: React.FC = () => {
                         className="w-[180px] h-[180px] object-contain"
                       />
                     </div>
+                    {/* Disabled file input - scanner image click is disabled */}
                     <input
                       type="file"
                       accept="image/*"
                       onChange={handleQrCodeUpload}
-                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                      title="Click to upload custom QR code"
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-not-allowed"
+                      title="QR code upload disabled"
+                      disabled
+                      style={{ pointerEvents: 'none' }}
                     />
                   </div>
                   <p className="text-gray-400 text-sm text-center">
                     Scan to pay ₹499 registration fee
                   </p>
                   <p className="text-gray-300 text-xs text-center mt-1">
-                    Click on QR code to upload custom payment QR if needed
+                    Scan the QR code to complete payment
                   </p>
                   <button
                     onClick={handlePaymentComplete}
